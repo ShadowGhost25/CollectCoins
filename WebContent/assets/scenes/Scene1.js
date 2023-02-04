@@ -61,7 +61,26 @@ class Scene1 extends Phaser.Scene {
 	}
 
 	update() {
-		if(this.cursors.down.isDown){
+		console.log('this.fPlayer_PhotoRoom.y', this.fPlayer_PhotoRoom.y);
+		console.log('this.fPlayer_PhotoRoom.x', this.fPlayer_PhotoRoom.x);
+		 if (this.fPlayer_PhotoRoom.x < 0) {
+			this.fPlayer_PhotoRoom.x = 800;
+		 } else if (this.fPlayer_PhotoRoom.x > 800) {
+			this.fPlayer_PhotoRoom.x = 0;
+		 }
+		 if (this.fPlayer_PhotoRoom.y < 0){
+			this.fPlayer_PhotoRoom.y = 450;
+		 } else if (this.fPlayer_PhotoRoom.y > 450){
+			this.fPlayer_PhotoRoom.y = 0;
+		 }
+		// if (this.fPlayer_PhotoRoom.x < 0 || this.fPlayer_PhotoRoom.y < 0){
+		// 		this.fPlayer_PhotoRoom.x = 800;
+		// 		this.fPlayer_PhotoRoom.y = 450;
+		// } else if(this.fPlayer_PhotoRoom.x > 800 || this.fPlayer_PhotoRoom.y > 450) {
+		// 	this.fPlayer_PhotoRoom.x = 0;
+		// 		this.fPlayer_PhotoRoom.y =0;
+		// }
+			if(this.cursors.down.isDown){
 			this.fPlayer_PhotoRoom.y += 4;
 		} else if(this.cursors.up.isDown){
 			this.fPlayer_PhotoRoom.y -=4;
